@@ -3,16 +3,22 @@ package cn.linjinfu.pojo;
 import java.util.Date;
 
 public class Word {
+    //ID
     private Integer id;
 
+    //留言人ID
     private Integer userId;
 
+    //留言人名字
     private String userName;
 
+    //帖子ID
     private Integer articleId;
 
+    //留言日期
     private Date date;
 
+    //留言内容
     private String content;
 
     public Integer getId() {

@@ -4,6 +4,8 @@
 
 <configuration>
     <settings>
+        <!-- 使用jdbc的getGeneratedKeys获取数据库自增主键值 -->
+        <setting name="useGeneratedKeys" value="true" />
         <!-- 开启驼峰规则与下划线间的映射关系 -->
         <setting name="mapUnderscoreToCamelCase" value="true"/>
         <!-- mybatis3的 SQL日志打印方式 -->

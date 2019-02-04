@@ -9,6 +9,7 @@
     SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
     String nowDate = sdf.format(date);
 %>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -41,6 +42,7 @@
 
     </style>
 </head>
+
 <body>
 <div class="header">
     <div style="margin: 0 45% 0 45%;padding-top:5%;text-align:center;">
@@ -53,120 +55,117 @@
 <div class="container">
     <div id="content">
         <h2 class="text-nowrap" style="color: #393D49;text-align:center;padding-top:10%;font-family: Menlo">校园论坛系统</h2>
+
+        <!--选择表头-->
         <div style="text-align: center;">
             <br/>
             <br/>
+            <!--选择登录-->
             <label style="font-size:20px;color:white;padding-right:8%;">
-                <a href="#" id="login"
-                   style="text-decoration: none;border-bottom:2px solid #009688;color:#009688">登录</a>
+                <a href="#" id="login" style="text-decoration: none;border-bottom:2px solid #009688;color:#009688">登录</a>
             </label>
+            <!--选择注册-->
             <label style="font-size:20px;color:white;padding-left:8%;">
                 <a href="#" id="register" style="text-decoration:none;">注册</a>
             </label>
         </div>
         <hr style="color: #484848;text-align:center;"/>
+
         <!-- 登录的表单 -->
-        <form action="<%=basePath%>/admin/login.do" id="loginform" method="post" class="layui-form"
-              style="text-align: center;margin-right:12%;margin-top:10%;">
-            <input name="a_id" hidden="hidden" value="${a_id}"/>
+        <form action="<%=basePath%>/user/login.do" id="loginform" method="post" class="layui-form" style="text-align: center;margin-right:12%;margin-top:10%;">
             <div>
+                <!--输入用户名-->
                 <div class="layui-form-item layui-inline" style="width:110%">
-                    <label class="layui-form-label" style="margin-left:13%;"><i class="fa fa-user fa-fw"></i></label>
+                    <label class="layui-form-label" style="margin-left:13%;">
+                        <i class="fa fa-user fa-fw"></i>
+                    </label>
                     <div class="layui-input-inline">
-                        <input type="text" name="a_name" class="layui-input"
-                               style="background:none;border: none;border-bottom:1px solid white;"
-                               placeholder="Username"/>
+                        <input type="text" name="name" class="layui-input" style="background:none;border: none;border-bottom:1px solid white;" placeholder="用户名"/>
                     </div>
                 </div>
-
                 <br/>
+                <!--输入密码-->
                 <div class="layui-form-item layui-inline">
                     <label class="layui-form-label">
                         <span class="fa fa-lock fa-fw"></span>
                     </label>
                     <div class="layui-input-inline">
-                        <input type="password" name="a_password" class="layui-input"
-                               style="background:none;border: none;border-bottom:1px solid white;"
-                               placeholder="Password"/>
-                    </div>
-                </div>
-                <br/>
-                <div class="layui-form-item layui-inline" style="width:110%">
-                    <label class="layui-form-label" style="margin-left:13%;"><i class="fa fa-user fa-fw"></i></label>
-                    <div class="layui-input-block" style="width:50%">
-                        <input type="radio" name="a_key" value="1" title="管理员">
-                        <input type="radio" name="a_key" value="0" title="用户" checked="">
+                        <input type="password" name="password" class="layui-input" style="background:none;border: none;border-bottom:1px solid white;" placeholder="密码"/>
                     </div>
                 </div>
                 <br/>
                 <br/>
+                <!--登录按钮-->
                 <div style="text-align:center;color: #009688;background-color: #01AAED;width:48%;margin-left:138px;">
-                    <input type="submit" class="layui-btn layui-btn-lg" style="background: none;" value="Sing in"/>
+                    <input type="submit" class="layui-btn layui-btn-lg" style="background: none;" value="登录"/>
                 </div>
             </div>
         </form>
+
         <!-- 注册的表单 -->
-        <form action="<%=basePath%>/admin/register.do" id="registerform" method="post" class="layui-form"
-              hidden="hidden" style="text-align: center;margin-right:12%;margin-top:10%;">
+        <form action="<%=basePath%>/user/register.do" id="registerform" method="post" class="layui-form" hidden="hidden" style="text-align: center;margin-right:12%;margin-top:10%;">
             <div>
-                <!--默认白名单-->
-                <input type="text" name="a_black" value="0" id="a_black" hidden/>
-                <!--注册时间-->
-                <input type="text" name="a_date" value="<%=nowDate%>" id="a_date" hidden/>
+                <!--隐藏的默认白名单-->
+                <input type="text" name="blacklist" value="2" id="blacklist" hidden="hidden"/>
+                <!--隐藏的实时注册时间-->
+                <input type="text" name="a_date" value="<%=nowDate%>" id="a_date" hidden="hidden"/>
+                <!--输入用户名-->
                 <div class="layui-form-item layui-inline" style="width:110%">
-                    <label class="layui-form-label" style="margin-left:13%;"><i class="fa fa-user fa-fw"></i></label>
+                    <label class="layui-form-label" style="margin-left:13%;">
+                        <i class="fa fa-user fa-fw"></i>
+                    </label>
                     <div class="layui-input-inline">
-                        <input type="text" name="a_name" id="a_name" onblur="return checkName();" class="layui-input"
-                               style="background:none;border: none;border-bottom:1px solid white;"
-                               placeholder="Username"/>
+                        <input type="text" name="name" id="name" onblur="return checkName();" class="layui-input" style="background:none;border: none;border-bottom:1px solid white;" placeholder="用户名"/>
                     </div>
+                    <!--提示信息-->
                     <span id="info"></span>
                 </div>
                 <br/>
+                <!--输入密码-->
                 <div class="layui-form-item layui-inline">
                     <label class="layui-form-label" style="font-size:16px;">
                         <span class="fa fa-lock fa-fw"></span>
                     </label>
                     <div class="layui-input-inline">
-                        <input type="password" name="a_password" id="a_password" class="layui-input"
-                               style="background:none;border: none;border-bottom:1px solid white;"
-                               placeholder="Password"/>
+                        <input type="password" name="password" id="password" class="layui-input" style="background:none;border: none;border-bottom:1px solid white;" placeholder="密码"/>
                     </div>
                 </div>
                 <br/>
+                <!--选择身份-->
                 <div class="layui-form-item layui-inline" style="width:110%">
-                    <label class="layui-form-label" style="margin-left:13%;"><i class="fa fa-user fa-fw"></i></label>
+                    <label class="layui-form-label" style="margin-left:13%;">
+                        <i class="fa fa-battery fa-fw"></i>
+                    </label>
                     <div class="layui-input-block" style="width:50%">
-                        <input type="radio" name="a_key" value="1" title="管理员">
-                        <input type="radio" name="a_key" value="0" title="用户" checked="">
+                        <input type="radio" name="userAdmin" value="1" title="用户" checked="">
+                        <input type="radio" name="userAdmin" value="2" title="管理员">
                     </div>
                 </div>
                 <br/>
+                <!--验证码-->
                 <div class="layui-form-item layui-inline" style="margin-left: 14%;">
                     <label class="layui-form-label">
                         <span class="fa fa-envelope fa-fw"></span>
                     </label>
                     <div class="layui-input-inline" style="width: 32%;">
-                        <input type="text" id="check" class="layui-input"
-                               style="background:none;border: none;border-bottom:1px solid white;"/>
+                        <input type="text" id="check" class="layui-input" style="background:none;border: none;border-bottom:1px solid white;"/>
                     </div>
                     <div class="layui-input-inline">
-                        <input id="code" onclick="createCode()" type="button"
-                               style="background:none;border: none;margin-left:198px;margin-top:-14%;"/>
+                        <input type="button" id="code" onclick="createCode()" style="background:none;border: none;margin-left:198px;margin-top:-14%;"/>
                     </div>
                 </div>
                 <br/>
                 <br/>
+                <!--注册按钮-->
                 <div style="text-align:center;color: #009688;background-color: #01AAED;width:48%;margin-left:34%;">
-                    <input type="button" class="layui-btn layui-btn-lg" style="background: none;" value="Sing up"
-                           onclick="validate()"/>
+                    <input type="button" class="layui-btn layui-btn-lg" style="background: none;" value="注册" onclick="validate()"/>
                 </div>
             </div>
         </form>
-
     </div>
 </div>
 </body>
+
 <script src="<%=basePath%>/static/js/jquery-3.3.1.min.js"></script>
 <script src="<%=basePath%>/static/layui/layui.all.js"></script>
 <script type="text/javascript">
@@ -188,14 +187,14 @@
     });
 
     function checkName() {
-        var a_name = $("#a_name").val();
-        if (a_name != '') {
+        var name = $("#name").val();
+        if (name != '') {
             $.ajax({
-                url: '<%=basePath%>/admin/findByName.do',
+                url: '<%=basePath%>/user/checkName.do',
                 type: 'post',
                 dataType: 'json',
                 contentType: 'application/json;charset=utf-8',
-                data: JSON.stringify({"a_name": a_name}),
+                data: JSON.stringify({"name": name}),
                 success: function (data) {
                     if (data == null) {
                         $("#info").text("可以注册").css({'color': 'green', 'font-size': '1px'});
@@ -212,11 +211,12 @@
                 }
             });
         }
-        if (a_name == '') {
+        if (name == '') {
             $("#info").text("");
         }
     }
 </script>
+
 <script type="text/javascript">
     //设置一个全局的变量，便于保存验证码
     var code;

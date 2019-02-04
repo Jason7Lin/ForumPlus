@@ -1,8 +1,10 @@
 package cn.linjinfu.pojo;
 
 public class Module {
+    //ID
     private Integer id;
 
+    //模块名字
     private String name;
 
     public Integer getId() {

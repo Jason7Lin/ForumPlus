@@ -3,26 +3,37 @@ package cn.linjinfu.pojo;
 import java.util.Date;
 
 public class User {
+    //ID
     private Integer id;
 
+    //用户名
     private String name;
 
+    //密码
     private String password;
 
+    //性别
     private String sex;
 
+    //联系电话
     private String telephone;
 
+    //电子邮箱
     private String email;
 
+    //头像
     private String photo;
 
+    //注册日期
     private Date date;
 
+    //1：黑名单 2：白名单
     private Integer blacklist;
 
+    //1：用户 2：管理员
     private Integer userAdmin;
 
+    //个人简介
     private String introduction;
 
     public Integer getId() {
