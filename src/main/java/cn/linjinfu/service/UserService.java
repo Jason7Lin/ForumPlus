@@ -8,4 +8,7 @@ public interface UserService {
 
     //新增用户
     void insertUser(User user);
+
+    //根据用户名查询
+    User checkUserByName(String name);
 }

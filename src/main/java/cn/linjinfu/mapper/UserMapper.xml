@@ -16,6 +16,11 @@
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.linjinfu.pojo.User">
     <result column="introduction" jdbcType="LONGVARCHAR" property="introduction" />
   </resultMap>
+
+  <select id="checkUserByName" parameterType="String" resultType="User">
+    select * from user where name = #{name}
+  </select>
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">

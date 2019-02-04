@@ -129,6 +129,7 @@
 
 </div>
 </body>
+
 <script src="<%=basePath%>/static/layui/layui.js"></script>
 <script src="<%=basePath%>/static/js/bootstrap.min.js"></script>
 <script src="<%=basePath%>/static/js/jquery-3.3.1.min.js"></script>
@@ -142,18 +143,22 @@
     function toUserInfo() {
         document.getElementById("content").innerHTML = "<object type=\"text/html\" data=\"<%=basePath%>/user/toUserInfo.do\" width=\"100%\" height=\"100%\"></object>";
     }
+
     //跳转全部帖子 page1
     function toAllArticle() {
         document.getElementById("content").innerHTML = "<object type=\"text/html\" data=\"<%=basePath%>/article/toAllArticle.do\" width=\"100%\" height=\"100%\"></object>";
     }
+
     //跳转帖子版块 page2
     function toModuleArticle(moduleId) {
         document.getElementById("content").innerHTML = "<object type=\"text/html\" data=\"<%=basePath%>/article/toModuleArticle.do?moduleId=" + moduleId + "\" width=\"100%\" height=\"100%\"></object>";
     }
+
     //跳转精品帖子 page3
     function toGreatArticle() {
         document.getElementById("content").innerHTML = "<object type=\"text/html\" data=\"<%=basePath%>/article/toGreatArticle.do\" width=\"100%\" height=\"100%\"></object>";
     }
+
     //跳转我的帖子 page4
     function toMyArticle() {
         document.getElementById("content").innerHTML = "<object type=\"text/html\" data=\"<%=basePath%>/article/toMyArticle.do\" width=\"100%\" height=\"100%\"></object>";

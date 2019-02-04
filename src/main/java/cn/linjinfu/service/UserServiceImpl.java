@@ -28,4 +28,11 @@ public class UserServiceImpl implements UserService {
     public void insertUser(User user) {
         userMapper.insertSelective(user);
     }
+
+    //根据用户名查询
+    @Override
+    public User checkUserByName(String name) {
+        User user=userMapper.checkUserByName(name);
+        return user;
+    }
 }

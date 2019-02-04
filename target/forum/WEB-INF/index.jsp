@@ -108,7 +108,7 @@
                 <!--隐藏的默认白名单-->
                 <input type="text" name="blacklist" value="2" id="blacklist" hidden="hidden"/>
                 <!--隐藏的实时注册时间-->
-                <input type="text" name="a_date" value="<%=nowDate%>" id="a_date" hidden="hidden"/>
+                <input type="text" name="date" value="<%=date%>" id="date" hidden="hidden"/>
                 <!--输入用户名-->
                 <div class="layui-form-item layui-inline" style="width:110%">
                     <label class="layui-form-label" style="margin-left:13%;">
