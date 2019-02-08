@@ -3,9 +3,16 @@ package cn.linjinfu.mapper;
 import cn.linjinfu.pojo.Article;
 import cn.linjinfu.pojo.ArticleExample;
 import java.util.List;
+
+import com.github.pagehelper.Page;
 import org.apache.ibatis.annotations.Param;
 
 public interface ArticleMapper {
+    //多条件分页查询
+    Page<Article> findByPage(Article article);
+
+
+
     long countByExample(ArticleExample example);
 
     int deleteByExample(ArticleExample example);
@@ -33,4 +40,6 @@ public interface ArticleMapper {
     int updateByPrimaryKeyWithBLOBs(Article record);
 
     int updateByPrimaryKey(Article record);
+
+
 }

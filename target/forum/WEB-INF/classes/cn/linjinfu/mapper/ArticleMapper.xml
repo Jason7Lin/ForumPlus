@@ -13,6 +13,27 @@
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.linjinfu.pojo.Article">
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
   </resultMap>
+
+  <!--多条件分页查询-->
+  <!--输入是对象属性值，输出才涉及数据库和对象的映射-->
+  <select id="findByPage" parameterType="Article" resultMap="BaseResultMap">
+    SELECT * FROM article
+    <where>
+      <if test="userName != null and userName !=''">
+        AND user_name LIKE CONCAT('%', #{userName}, '%')
+      </if>
+      <if test="title != null and title !=''">
+        AND title LIKE CONCAT('%', #{title}, '%')
+      </if>
+      <if test="moduleId != null and moduleId !=''">
+        AND module_id = #{moduleId}
+      </if>
+      <if test="great != null and great !=''">
+        AND great = #{great}
+      </if>
+    </where>
+  </select>
+
   <sql id="Example_Where_Clause">
     <where>
       <foreach collection="oredCriteria" item="criteria" separator="or">

@@ -9,6 +9,9 @@ public interface UserService {
     //新增用户
     void insertUser(User user);
 
-    //根据用户名查询
-    User checkUserByName(String name);
+    //根据ID查询
+    User selectUserById(Integer userId);
+
+    //编辑用户
+    void updateUserById(User user);
 }

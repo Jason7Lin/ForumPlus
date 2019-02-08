@@ -86,7 +86,7 @@ public class UserController {
 
     //用户注册
     @RequestMapping(value = "/register.do")
-    public String register(User user, HttpSession session,Model model) {
+    public String register(User user, HttpSession session, Model model) {
         //新增用户
         userService.insertUser(user);
         //保存userId userName
@@ -116,8 +116,55 @@ public class UserController {
     @ResponseBody
     @RequestMapping(value = "/checkName.do")
     public String checkName(@RequestBody User user) {
-        User info = userService.checkUserByName(user.getName());
+        User info = userService.selectUserByName(user.getName());
         System.out.println(JSONObject.toJSONString(info));
         return JSONObject.toJSONString(info);
+    }
+
+    //跳转用户首页
+    @RequestMapping(value = "/toUserIndex.do")
+    public String toUserIndex() {
+        return "page/user_index";
+    }
+    //跳转管理员首页
+    @RequestMapping(value = "/toAdminIndex.do")
+    public String toAdminIndex() {
+        return "page/admin_index";
+    }
+
+    //退出登录，回到首页
+    @RequestMapping(value = "/outLogin.do")
+    public String outLogin(HttpSession session) {
+        session.invalidate();
+        return "index";
+    }
+
+    //跳转用户个人资料
+    @RequestMapping(value = "/toUserInfo.do")
+    public String toUserInfo(HttpSession session,Model model) {
+        //取session
+        Integer userId= (Integer) session.getAttribute("userId");
+        //根据ID查询用户信息
+        User user=userService.selectUserById(userId);
+        model.addAttribute("user",user);
+        return "page/info/editInfo";
+    }
+
+//    //先根据id查询用户信息方法
+//    @ResponseBody//使其不走视图解析器 ajax...
+//    @RequestMapping(value = "/findUserById")
+//    public Admin findById(@RequestBody Admin admin) {
+//        Admin user = adminService.findUserById(admin.getA_id());
+//        if (user != null) {
+//            return user;
+//        } else {
+//            return null;
+//        }
+//    }
+    //编辑用户信息
+    @RequestMapping(value = "/updateUserById.do")
+    public String updateUserById(User user) {
+        userService.updateUserById(user);
+        return "redirect:toUserInfo.do";
     }
 }

@@ -168,6 +168,7 @@
 
 <script src="<%=basePath%>/static/js/jquery-3.3.1.min.js"></script>
 <script src="<%=basePath%>/static/layui/layui.all.js"></script>
+
 <script type="text/javascript">
     layui.use(['layer', 'element'], function () {
         var layer = layui.layer;

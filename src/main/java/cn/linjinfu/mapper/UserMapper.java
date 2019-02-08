@@ -34,5 +34,6 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
 
-    User checkUserByName(String name);
+    //根据用户名查询（检测用户名是否已经存在）
+    User selectUserByName(String name);
 }

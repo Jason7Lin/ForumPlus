@@ -168,6 +168,7 @@
 
 <script src="<%=basePath%>/static/js/jquery-3.3.1.min.js"></script>
 <script src="<%=basePath%>/static/layui/layui.all.js"></script>
+
 <script type="text/javascript">
     layui.use(['layer', 'element'], function () {
         var layer = layui.layer;
@@ -194,6 +195,7 @@
                 type: 'post',
                 dataType: 'json',
                 contentType: 'application/json;charset=utf-8',
+                //注意 传对象还是字符串是不同的
                 data: JSON.stringify({"name": name}),
                 success: function (data) {
                     if (data == null) {

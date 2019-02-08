@@ -40,7 +40,7 @@
                 <a href="javascript:;" style="text-decoration: none;">
                     <!--头像-->
                     <img src="<%=basePath%>/static/img/avatar.jpg" class="layui-nav-img">
-                    <!--session:userId-->
+                    <!--用户ID session:userId-->
                     <strong hidden="hidden">${sessionScope.userId}</strong>
                     <!--用户名 session:userName-->
                     <strong>${sessionScope.userName}</strong>
@@ -130,16 +130,17 @@
 </div>
 </body>
 
+<script src="<%=basePath%>/static/js/jquery-3.3.1.min.js"></script>
 <script src="<%=basePath%>/static/layui/layui.js"></script>
 <script src="<%=basePath%>/static/js/bootstrap.min.js"></script>
-<script src="<%=basePath%>/static/js/jquery-3.3.1.min.js"></script>
+
 <script type="text/javascript">
     layui.use('element', function () {
         var element = layui.element;
     });
 </script>
 <script type="text/javascript">
-    //跳转个人资料
+    //跳转用户个人资料
     function toUserInfo() {
         document.getElementById("content").innerHTML = "<object type=\"text/html\" data=\"<%=basePath%>/user/toUserInfo.do\" width=\"100%\" height=\"100%\"></object>";
     }

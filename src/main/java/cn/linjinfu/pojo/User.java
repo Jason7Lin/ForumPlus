@@ -15,6 +15,9 @@ public class User {
     //性别
     private String sex;
 
+    //年龄
+    private String age;
+
     //联系电话
     private String telephone;
 
@@ -27,14 +30,14 @@ public class User {
     //注册日期
     private Date date;
 
+    //个人简介
+    private String introduction;
+
     //1：黑名单 2：白名单
     private Integer blacklist;
 
     //1：用户 2：管理员
     private Integer userAdmin;
-
-    //个人简介
-    private String introduction;
 
     public Integer getId() {
         return id;
@@ -66,6 +69,14 @@ public class User {
 
     public void setSex(String sex) {
         this.sex = sex == null ? null : sex.trim();
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age == null ? null : age.trim();
     }
 
     public String getTelephone() {
