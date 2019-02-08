@@ -37,9 +37,9 @@ public class ArticleController {
         if (signId == 1) {
             String userName=request.getParameter("userName");
             if (userName != null) {
-                session.setAttribute("userName", userName);
+                session.setAttribute("author", userName);
             } else {
-                userName = (String) session.getAttribute("userName");
+                userName = (String) session.getAttribute("author");
             }
             article.setUserName(userName);
             //回显

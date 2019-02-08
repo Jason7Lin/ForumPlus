@@ -21,11 +21,22 @@ public class Article {
     //发表日期
     private Date date;
 
+    //留言内容
+    private String content;
+
     //1：精品 2：非精品
     private Integer great;
 
-    //留言内容
-    private String content;
+    //附加对象
+    private Module module;
+
+    public Module getModule() {
+        return module;
+    }
+
+    public void setModule(Module module) {
+        this.module = module;
+    }
 
     public Integer getId() {
         return id;

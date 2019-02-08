@@ -38,7 +38,7 @@
 
                     <label class="layui-form-label" style="margin-left: -10px;padding-left:0;"><strong>简介</strong></label>
                     <div class="layui-input-inline" style="width: 150px">
-                        <input name="title" value="${article.title}" placeholder="请输入帖子简介查询" class="layui-input" type="text">
+                        <input name="title" value="${article.title}" placeholder="请输入帖子标题查询" class="layui-input" type="text">
                     </div>
 
                     <label class="layui-form-label" style="margin-left: -10px;padding-left:0;"><strong>版块</strong></label>
@@ -100,7 +100,7 @@
                     <c:if test="${article.great=='2'}">
                         <td><i class="layui-icon" style="font-size: 18px; color: #2aa198;">&#xe600;</i></td>
                     </c:if>
-                    <td>${article.moduleId}</td>
+                    <td>${article.module.name}</td>
                     <td>${article.title}</td>
                     <td>${article.userName}</td>
                     <td>${article.date}</td>

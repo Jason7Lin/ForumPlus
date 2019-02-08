@@ -14,10 +14,30 @@
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
   </resultMap>
 
+  <resultMap id="OneToOneResultMap" type="cn.linjinfu.pojo.Article">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="module_id" jdbcType="INTEGER" property="moduleId" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="date" jdbcType="TIMESTAMP" property="date" />
+    <result column="great" jdbcType="INTEGER" property="great" />
+    <!-- 一对一 -->
+    <association property="module" javaType="Module">
+      <id column="id" property="id"/><!-- 外键 -->
+      <result column="name" property="name"/>
+    </association>
+  </resultMap>
+  <resultMap extends="OneToOneResultMap" id="OneToOneResultMapWithBLOBs" type="cn.linjinfu.pojo.Article">
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+
   <!--多条件分页查询-->
   <!--输入是对象属性值，输出才涉及数据库和对象的映射-->
-  <select id="findByPage" parameterType="Article" resultMap="BaseResultMap">
-    SELECT * FROM article
+  <select id="findByPage" parameterType="Article" resultMap="OneToOneResultMapWithBLOBs">
+    select a.id , a.user_id , a.user_name , a.module_id , m.name , a.title , a.content , a.date , a.great
+      from article a left join module m
+        on a.id = m.id
     <where>
       <if test="userName != null and userName !=''">
         AND user_name LIKE CONCAT('%', #{userName}, '%')
