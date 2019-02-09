@@ -45,7 +45,7 @@
       <if test="title != null and title !=''">
         AND title LIKE CONCAT('%', #{title}, '%')
       </if>
-      <if test="moduleId != null and moduleId !=''">
+      <if test="moduleId != null and moduleId !='' and moduleId !=0 ">
         AND module_id = #{moduleId}
       </if>
       <if test="great != null and great !=''">

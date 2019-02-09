@@ -9,15 +9,9 @@
     <list default="true" id="623665dc-dcc2-469a-982e-9748255bd7c3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/linjinfu/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/linjinfu/controller/ArticleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/linjinfu/mapper/ArticleMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/article/ArticleMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/linjinfu/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/article/ArticleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/linjinfu/pojo/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/article/Article.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/linjinfu/pojo/ArticleExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/article/ArticleExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/linjinfu/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/linjinfu/mapper/ArticleMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/article/allArticle.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/article/allArticle.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/cn/linjinfu/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/linjinfu/mapper/ArticleMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/mybatis/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/forum/WEB-INF/classes/cn/linjinfu/mapper/ArticleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/forum/WEB-INF/classes/cn/linjinfu/mapper/ArticleMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/forum/WEB-INF/page/article/allArticle.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/forum/WEB-INF/page/article/allArticle.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,62 +27,7 @@
     <favorites_list name="ForumPlus" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="user_index.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/user_index.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1196">
-              <caret line="147" column="12" selection-start-line="147" selection-start-column="6" selection-end-line="147" selection-end-column="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="allArticle.jsp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/article/allArticle.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="70" column="74" selection-start-line="70" selection-start-column="74" selection-end-line="70" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/linjinfu/controller/ArticleController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="545">
-              <caret line="86" column="41" lean-forward="true" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/linjinfu/service/ArticleService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="13" selection-end-line="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArticleServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/cn/linjinfu/service/ArticleServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="13" selection-end-line="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -155,11 +94,11 @@
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/generatorConfig.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/linjinfu/pojo/Article.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/linjinfu/mapper/ArticleMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/linjinfu/mapper/ArticleMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/cn/linjinfu/service/ArticleServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/cn/linjinfu/service/ArticleService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/cn/linjinfu/controller/ArticleController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/page/article/allArticle.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/linjinfu/mapper/ArticleMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/cn/linjinfu/controller/ArticleController.java" />
       </list>
     </option>
   </component>
@@ -559,16 +498,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1549109220785</updated>
-      <workItem from="1549109222366" duration="55188000" />
+      <workItem from="1549109222366" duration="66547000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55188000" />
+    <option name="totallyTimeSpent" value="66547000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="bottom" id="Event Log" order="6" side_tool="true" weight="0.32943144" />
@@ -581,18 +519,18 @@
       <window_info id="Structure" order="5" sideWeight="0.49358973" side_tool="true" weight="0.15" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="9" weight="0.7324415" />
+      <window_info anchor="bottom" id="Debug" order="9" weight="0.43143812" />
       <window_info anchor="bottom" id="TODO" order="12" />
       <window_info anchor="bottom" id="Messages" order="5" weight="0.3277592" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="1" />
       <window_info anchor="bottom" id="Java Enterprise" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
-      <window_info anchor="bottom" id="Run" order="7" visible="true" weight="0.39632106" />
+      <window_info anchor="bottom" id="Run" order="7" weight="0.39632106" />
       <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="bottom" id="Spring" />
       <window_info anchor="bottom" id="Terminal" order="1" />
-      <window_info content_ui="combo" id="Project" order="4" sideWeight="0.46268657" visible="true" weight="0.22919819" />
+      <window_info active="true" content_ui="combo" id="Project" order="4" sideWeight="0.46268657" visible="true" weight="0.24886535" />
       <window_info id="Web" order="3" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Favorites" order="7" sideWeight="0.53731346" side_tool="true" weight="0.15204236" />
@@ -612,20 +550,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="19" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/pojo/GeneratorSqlmap.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/resource/jdbc.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -834,13 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/user_index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1196">
-          <caret line="147" column="12" selection-start-line="147" selection-start-column="6" selection-end-line="147" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/info/editInfo.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-272">
@@ -907,10 +828,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/linjinfu/mapper/ArticleMapper.xml">
+    <entry file="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.2/commons-logging-1.2.jar!/org/apache/commons/logging/impl/Jdk14Logger.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+        <state relative-caret-position="19">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.2.4.RELEASE/spring-web-4.2.4.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
@@ -934,20 +862,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/cn/linjinfu/controller/ArticleController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/user_index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="86" column="41" lean-forward="true" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="1196">
+          <caret line="147" column="12" selection-start-line="147" selection-start-column="6" selection-end-line="147" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/page/article/allArticle.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="70" column="74" selection-start-line="70" selection-start-column="74" selection-end-line="70" selection-end-column="74" />
+        <state relative-caret-position="221">
+          <caret line="49" column="44" lean-forward="true" selection-start-line="49" selection-start-column="44" selection-end-line="49" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#label#2;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#form#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/linjinfu/mapper/ArticleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="47" column="33" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/cn/linjinfu/controller/ArticleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="73" column="27" selection-start-line="73" selection-start-column="27" selection-end-line="73" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

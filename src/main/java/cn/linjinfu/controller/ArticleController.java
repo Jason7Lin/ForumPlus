@@ -26,6 +26,7 @@ public class ArticleController {
 
     //侧栏选择识别码
     Integer signId = 0;
+    Integer allId = 0;
 
     //多条件分页查询
     @RequestMapping(value = "/findByPage.do")
@@ -35,17 +36,21 @@ public class ArticleController {
 
         switch (signId) {
             case 1:
-                //只适用于String类型
-                //保存名字
+                //保存名字,标题,精品,版块
+                /*
+                适用于String类型
+                 */
                 String userName = request.getParameter("userName");
+                //点击查询： 1.''(被sql过滤) 2.正常数据
                 if (userName != null) {
                     session.setAttribute("author", userName);
-                } else {
+                }
+                //点击：1.全部帖子首页/底部页码session=null 2.底部页码(使用过查询后)session=前session
+                else {
                     userName = (String) session.getAttribute("author");
                 }
                 article.setUserName(userName);
 
-                //保存标题
                 String title = request.getParameter("title");
                 if (title != null) {
                     session.setAttribute("title", title);
@@ -54,7 +59,6 @@ public class ArticleController {
                 }
                 article.setTitle(title);
 
-                //保存精品
                 String great = request.getParameter("great");
                 if (great != null) {
                     session.setAttribute("great", great);
@@ -62,6 +66,25 @@ public class ArticleController {
                     great = (String) session.getAttribute("great");
                 }
                 article.setGreat(great);
+
+               /*
+                适用于Integer类型,区别Integer.parseInt(!null,!'')
+                 */
+                String moduleId = request.getParameter("moduleId");
+                //点击查询： 1.0(被sql过滤) 2.正常数据
+                if (moduleId != null) {
+                    session.setAttribute("moduleId", moduleId);
+                    article.setModuleId(Integer.parseInt(moduleId));
+                }
+                //点击：1.全部帖子首页/底部页码session=null 2.底部页码(使用过查询后)session=前session
+                else {
+                    moduleId= (String) session.getAttribute("moduleId");
+                    if (moduleId==null) {
+                        article.setModuleId(null);
+                    } else {
+                        article.setModuleId(Integer.parseInt(moduleId));
+                    }
+                }
 
                 //搜索数据回显
                 model.addAttribute("article", article);
@@ -71,7 +94,7 @@ public class ArticleController {
                 //单选框数据
                 List<Module> moduleList = moduleService.seleteModule();
                 model.addAttribute("moduleList", moduleList);
-
+                //去所有帖子
                 return "page/article/allArticle";
             default:
                 return null;
@@ -85,6 +108,8 @@ public class ArticleController {
         session.removeAttribute("author");
         session.removeAttribute("title");
         session.removeAttribute("great");
+        session.removeAttribute("moduleId");
+
         return "redirect:findByPage.do";
     }
 

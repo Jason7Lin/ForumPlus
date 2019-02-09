@@ -43,17 +43,17 @@
                     <div class="layui-input-inline" style="width: 150px">
                         <input name="title" value="${article.title}" placeholder="请输入帖子标题查询" class="layui-input" type="text">
                     </div>
-                    <%--<!--搜索版块-->--%>
-                    <%--<label class="layui-form-label" style="margin-left: -10px;padding-left:0;" ><strong>版块</strong></label>--%>
-                    <%--<div class="layui-input-inline" style="width: 100px" >--%>
-                        <%--<select name="moduleId" id="moduleId" lay-verify="required" lay-search="">--%>
-                            <%--<option>请选择</option>--%>
-                            <%--<c:forEach items="${moduleList}" var="module">--%>
-                                <%--<option value="${module.name}"--%>
-                                        <%--<c:if test="${module.id == article.moduleId}">selected</c:if> >${module.name}</option>--%>
-                            <%--</c:forEach>--%>
-                        <%--</select>--%>
-                    <%--</div>--%>
+                    <!--搜索版块-->
+                    <label class="layui-form-label" style="margin-left: -10px;padding-left:0;" ><strong>版块</strong></label>
+                    <div class="layui-input-inline" style="width: 100px" >
+                        <select name="moduleId" id="moduleId" lay-verify="required" lay-search="">
+                            <option value="0">请选择</option>
+                            <c:forEach items="${moduleList}" var="module">
+                                <option value="${module.id}"
+                                        <c:if test="${module.id == article.moduleId}">selected</c:if> >${module.name}</option>
+                            </c:forEach>
+                        </select>
+                    </div>
                     <!--搜索精品-->
                     <label class="layui-form-label" style="margin-left: -10px;padding-left:0;"><strong>精品</strong></label>
                     <div class="layui-input-inline" style="width: 100px">
