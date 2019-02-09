@@ -25,7 +25,7 @@ public class Article {
     private String content;
 
     //1：精品 2：非精品
-    private String great;
+    private Integer great;
 
     //附加对象
     private Module module;
@@ -86,12 +86,12 @@ public class Article {
         this.date = date;
     }
 
-    public String getGreat() {
+    public Integer getGreat() {
         return great;
     }
 
-    public void setGreat(String great) {
-        this.great = great == null ? null : great.trim();
+    public void setGreat(Integer great) {
+        this.great = great;
     }
 
     public String getContent() {

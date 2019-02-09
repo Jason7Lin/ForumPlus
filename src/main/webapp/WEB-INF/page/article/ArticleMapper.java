@@ -12,6 +12,7 @@ public interface ArticleMapper {
     Page<Article> findByPage(Article article);
 
 
+
     long countByExample(ArticleExample example);
 
     int deleteByExample(ArticleExample example);
@@ -39,4 +40,6 @@ public interface ArticleMapper {
     int updateByPrimaryKeyWithBLOBs(Article record);
 
     int updateByPrimaryKey(Article record);
+
+
 }

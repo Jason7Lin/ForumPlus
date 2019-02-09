@@ -1,9 +1,11 @@
 <%@ page isELIgnored="false" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path;
+
 %>
 <html>
 <head>
@@ -31,40 +33,42 @@
         <div>
             <form class="layui-form form-inline" action="<%=basePath%>/article/findByPage.do" role="form" method="post">
                 <div class="layui-form-item">
+                    <!--搜索名字-->
                     <label class="layui-form-label" style="margin-left: -10px;padding-left:0;"><strong>楼主</strong></label>
                     <div class="layui-input-inline" style="width: 150px">
                         <input name="userName" value="${article.userName}" placeholder="请输入楼主名字查询" class="layui-input" type="text">
                     </div>
-
+                    <!--搜索标题-->
                     <label class="layui-form-label" style="margin-left: -10px;padding-left:0;"><strong>简介</strong></label>
                     <div class="layui-input-inline" style="width: 150px">
                         <input name="title" value="${article.title}" placeholder="请输入帖子标题查询" class="layui-input" type="text">
                     </div>
-
-                    <label class="layui-form-label" style="margin-left: -10px;padding-left:0;"><strong>版块</strong></label>
-                    <div class="layui-input-inline" style="width: 100px">
-                        <select name="moduleId" id="moduleId" lay-verify="required" lay-search="">
-                            <option value="">请选择</option>
-                            <c:forEach items="${moduleList}" var="module">
-                                <option value="${module.name}"
-                                        <c:if test="${module.id == article.moduleId}">selected</c:if> >${module.name}</option>
-                            </c:forEach>
-                        </select>
-                    </div>
-
+                    <%--<!--搜索版块-->--%>
+                    <%--<label class="layui-form-label" style="margin-left: -10px;padding-left:0;" ><strong>版块</strong></label>--%>
+                    <%--<div class="layui-input-inline" style="width: 100px" >--%>
+                        <%--<select name="moduleId" id="moduleId" lay-verify="required" lay-search="">--%>
+                            <%--<option>请选择</option>--%>
+                            <%--<c:forEach items="${moduleList}" var="module">--%>
+                                <%--<option value="${module.name}"--%>
+                                        <%--<c:if test="${module.id == article.moduleId}">selected</c:if> >${module.name}</option>--%>
+                            <%--</c:forEach>--%>
+                        <%--</select>--%>
+                    <%--</div>--%>
+                    <!--搜索精品-->
                     <label class="layui-form-label" style="margin-left: -10px;padding-left:0;"><strong>精品</strong></label>
                     <div class="layui-input-inline" style="width: 100px">
                         <select name="great" id="great" lay-verify="required" lay- search="">
                             <option value="">请选择</option>
                             <option value="1"
-                                    <c:if test="${1 == article.great}">selected</c:if> >精品
+                                    <c:if test="${'1' == article.great}">selected</c:if> >精品
                             </option>
                             <option value="2"
-                                    <c:if test="${2 == article.great}">selected</c:if> >非精品
+                                    <c:if test="${'2' == article.great}">selected</c:if> >非精品
                             </option>
                         </select>
                     </div>
-                    <div class="layui-input-inline" style="margin-left: 350px;">
+                    <!--提交-->
+                    <div class="layui-input-inline" style="margin-left: 50px;">
                         <button class="layui-btn" type="submit">查询</button>
                         <button type="reset" class="layui-btn layui-btn-primary">重置</button>
                     </div>
@@ -103,7 +107,7 @@
                     <td>${article.module.name}</td>
                     <td>${article.title}</td>
                     <td>${article.userName}</td>
-                    <td>${article.date}</td>
+                    <td><fmt:formatDate value="${article.date}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                     <td>
                         <a href="<%=basePath%>/article/toArticleView.do?id=${article.id}">
                             <button type="button" class="layui-btn layui-btn-sm">查看</button>
@@ -117,7 +121,7 @@
 
     <!--在url中一个空格都是致命的-->
     <form class="listForm" method="post"
-          action="<%=basePath%>/userArticle/findByPage.do?">
+          action="<%=basePath%>/article/findByPage.do?">
         <div class="row">
             <div class="form-inline">
                 <label style="font-size:14px;margin-top:22px;">
@@ -152,11 +156,11 @@
 
                 <ul class="pagination" style="float:right;">
                     <li>
-                        <a href="<%=basePath%>/userArticle/findByPage.do?pageCode=1"><strong>首页</strong></a>
+                        <a href="<%=basePath%>/article/findByPage.do?pageCode=1&pageSize=${requestScope.page.pageSize}"><strong>首页</strong></a>
                     </li>
                     <li>
                         <c:if test="${requestScope.page.pageCode > 2}">
-                            <a href="<%=basePath%>/userArticle/findByPage.do?pageCode=${requestScope.page.pageCode - 1}">&laquo;</a>
+                            <a href="<%=basePath%>/article/findByPage.do?pageCode=${requestScope.page.pageCode - 1}&pageSize=${requestScope.page.pageSize}">&laquo;</a>
                         </c:if>
                     </li>
 
@@ -192,18 +196,18 @@
                         </c:if>
                         <c:if test="${i != requestScope.page.pageCode}">
                             <li>
-                                <a href="<%=basePath%>/userArticle/findByPage.do?pageCode=${i}&pageSize=${requestScope.page.pageSize}">${i}</a>
+                                <a href="<%=basePath%>/article/findByPage.do?pageCode=${i}&pageSize=${requestScope.page.pageSize}">${i}</a>
                             </li>
                         </c:if>
                     </c:forEach>
 
                     <li>
                         <c:if test="${requestScope.page.pageCode < requestScope.page.totalPage}">
-                            <a href="<%=basePath%>/userArticle/findByPage.do?pageCode=${requestScope.page.pageCode + 1}">&raquo;</a>
+                            <a href="<%=basePath%>/article/findByPage.do?pageCode=${requestScope.page.pageCode + 1}&pageSize=${requestScope.page.pageSize}">&raquo;</a>
                         </c:if>
                     </li>
                     <li>
-                        <a href="<%=basePath%>/userArticle/findByPage.do?pageCode=${requestScope.page.totalPage}"><strong>末页</strong></a>
+                        <a href="<%=basePath%>/article/findByPage.do?pageCode=${requestScope.page.totalPage}&pageSize=${requestScope.page.pageSize}"><strong>末页</strong></a>
                     </li>
                 </ul>
             </div>

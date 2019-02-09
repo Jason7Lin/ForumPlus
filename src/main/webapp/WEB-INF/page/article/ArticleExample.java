@@ -495,62 +495,52 @@ public class ArticleExample {
             return (Criteria) this;
         }
 
-        public Criteria andGreatEqualTo(String value) {
+        public Criteria andGreatEqualTo(Integer value) {
             addCriterion("great =", value, "great");
             return (Criteria) this;
         }
 
-        public Criteria andGreatNotEqualTo(String value) {
+        public Criteria andGreatNotEqualTo(Integer value) {
             addCriterion("great <>", value, "great");
             return (Criteria) this;
         }
 
-        public Criteria andGreatGreaterThan(String value) {
+        public Criteria andGreatGreaterThan(Integer value) {
             addCriterion("great >", value, "great");
             return (Criteria) this;
         }
 
-        public Criteria andGreatGreaterThanOrEqualTo(String value) {
+        public Criteria andGreatGreaterThanOrEqualTo(Integer value) {
             addCriterion("great >=", value, "great");
             return (Criteria) this;
         }
 
-        public Criteria andGreatLessThan(String value) {
+        public Criteria andGreatLessThan(Integer value) {
             addCriterion("great <", value, "great");
             return (Criteria) this;
         }
 
-        public Criteria andGreatLessThanOrEqualTo(String value) {
+        public Criteria andGreatLessThanOrEqualTo(Integer value) {
             addCriterion("great <=", value, "great");
             return (Criteria) this;
         }
 
-        public Criteria andGreatLike(String value) {
-            addCriterion("great like", value, "great");
-            return (Criteria) this;
-        }
-
-        public Criteria andGreatNotLike(String value) {
-            addCriterion("great not like", value, "great");
-            return (Criteria) this;
-        }
-
-        public Criteria andGreatIn(List<String> values) {
+        public Criteria andGreatIn(List<Integer> values) {
             addCriterion("great in", values, "great");
             return (Criteria) this;
         }
 
-        public Criteria andGreatNotIn(List<String> values) {
+        public Criteria andGreatNotIn(List<Integer> values) {
             addCriterion("great not in", values, "great");
             return (Criteria) this;
         }
 
-        public Criteria andGreatBetween(String value1, String value2) {
+        public Criteria andGreatBetween(Integer value1, Integer value2) {
             addCriterion("great between", value1, value2, "great");
             return (Criteria) this;
         }
 
-        public Criteria andGreatNotBetween(String value1, String value2) {
+        public Criteria andGreatNotBetween(Integer value1, Integer value2) {
             addCriterion("great not between", value1, value2, "great");
             return (Criteria) this;
         }

@@ -8,7 +8,7 @@
     <result column="module_id" jdbcType="INTEGER" property="moduleId" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="date" jdbcType="TIMESTAMP" property="date" />
-    <result column="great" jdbcType="INTEGER" property="great" />
+    <result column="great" jdbcType="VARCHAR" property="great" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.linjinfu.pojo.Article">
     <result column="content" jdbcType="LONGVARCHAR" property="content" />
@@ -21,7 +21,7 @@
     <result column="module_id" jdbcType="INTEGER" property="moduleId" />
     <result column="title" jdbcType="VARCHAR" property="title" />
     <result column="date" jdbcType="TIMESTAMP" property="date" />
-    <result column="great" jdbcType="INTEGER" property="great" />
+    <result column="great" jdbcType="VARCHAR" property="great" />
     <!-- 一对一 -->
     <association property="module" javaType="Module">
       <id column="id" property="id"/><!-- 外键 -->
@@ -36,8 +36,8 @@
   <!--输入是对象属性值，输出才涉及数据库和对象的映射-->
   <select id="findByPage" parameterType="Article" resultMap="OneToOneResultMapWithBLOBs">
     select a.id , a.user_id , a.user_name , a.module_id , m.name , a.title , a.content , a.date , a.great
-      from article a left join module m
-        on a.id = m.id
+    from article a left join module m
+    on a.module_id = m.id
     <where>
       <if test="userName != null and userName !=''">
         AND user_name LIKE CONCAT('%', #{userName}, '%')
@@ -172,7 +172,7 @@
       great, content)
     values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, 
       #{moduleId,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{date,jdbcType=TIMESTAMP}, 
-      #{great,jdbcType=INTEGER}, #{content,jdbcType=LONGVARCHAR})
+      #{great,jdbcType=VARCHAR}, #{content,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="cn.linjinfu.pojo.Article">
     insert into article
@@ -222,7 +222,7 @@
         #{date,jdbcType=TIMESTAMP},
       </if>
       <if test="great != null">
-        #{great,jdbcType=INTEGER},
+        #{great,jdbcType=VARCHAR},
       </if>
       <if test="content != null">
         #{content,jdbcType=LONGVARCHAR},
@@ -257,7 +257,7 @@
         date = #{record.date,jdbcType=TIMESTAMP},
       </if>
       <if test="record.great != null">
-        great = #{record.great,jdbcType=INTEGER},
+        great = #{record.great,jdbcType=VARCHAR},
       </if>
       <if test="record.content != null">
         content = #{record.content,jdbcType=LONGVARCHAR},
@@ -275,7 +275,7 @@
       module_id = #{record.moduleId,jdbcType=INTEGER},
       title = #{record.title,jdbcType=VARCHAR},
       date = #{record.date,jdbcType=TIMESTAMP},
-      great = #{record.great,jdbcType=INTEGER},
+      great = #{record.great,jdbcType=VARCHAR},
       content = #{record.content,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -289,7 +289,7 @@
       module_id = #{record.moduleId,jdbcType=INTEGER},
       title = #{record.title,jdbcType=VARCHAR},
       date = #{record.date,jdbcType=TIMESTAMP},
-      great = #{record.great,jdbcType=INTEGER}
+      great = #{record.great,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -313,7 +313,7 @@
         date = #{date,jdbcType=TIMESTAMP},
       </if>
       <if test="great != null">
-        great = #{great,jdbcType=INTEGER},
+        great = #{great,jdbcType=VARCHAR},
       </if>
       <if test="content != null">
         content = #{content,jdbcType=LONGVARCHAR},
@@ -328,7 +328,7 @@
       module_id = #{moduleId,jdbcType=INTEGER},
       title = #{title,jdbcType=VARCHAR},
       date = #{date,jdbcType=TIMESTAMP},
-      great = #{great,jdbcType=INTEGER},
+      great = #{great,jdbcType=VARCHAR},
       content = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -339,7 +339,7 @@
       module_id = #{moduleId,jdbcType=INTEGER},
       title = #{title,jdbcType=VARCHAR},
       date = #{date,jdbcType=TIMESTAMP},
-      great = #{great,jdbcType=INTEGER}
+      great = #{great,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
